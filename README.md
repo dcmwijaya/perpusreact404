@@ -6,3 +6,5 @@
 
 # PerpusReact404
 <p>PerpusReact404 merupakan hasil dari pelatihan reguler CAMP404 Batch 16 yang saya kerjakan secara custom.</p>
+
+<b>BELUM JADI (MASIH DASARNYA SAJA), HARAP BERSABAR !!!</b>
