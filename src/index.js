@@ -4,7 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/umd/popper.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../src/assets/fontawesome/css/all.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

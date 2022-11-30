@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../favicon/favicon-16x16.png'
+import Logo from '../assets/favicon/favicon-16x16.png'
 
 function Navbar() {
     return (
         <div className="navbar navbar-expand-lg navbar-dark bg-success">
             <div className="container-fluid">
-                <span className="navbar-brand mb-0 h1">
+                <span className="navbar-brand mb-0 h1 me-5">
                     <img src={ Logo } alt="Logo" width="30" height="24" />
                     <strong>perpusreact404</strong>
                 </span>
@@ -16,7 +16,8 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <Link to="/" className="nav-link me-2" href="/"><i class="bi bi-house-door-fill me-1"></i>Beranda</Link>
-                        <Link to="/katalog" className="nav-link"><i class="bi bi-collection-fill me-1"></i>Katalog</Link>
+                        <Link to="/katalog" className="nav-link me-2"><i class="bi bi-collection-fill me-1"></i>Katalog</Link>
+                        <Link to="/manajemenbuku" className="nav-link"><i class="fa-solid fa-book-bookmark me-1"></i>Manajemen Buku</Link>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className="footer footer-expand-lg footer-dark bg-success pt-4 pb-3">
+        <div className="footer footer-expand-lg footer-dark bg-success mt-5 pt-5 pb-3">
             <div className="footer-brand text-center">
                 <span className="text-white fw-bold">© 2022 perpusreact404 | All Rights Reserved</span>
             </div>
