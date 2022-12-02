@@ -15,9 +15,9 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link to="/" className="nav-link me-2" href="/"><i class="bi bi-house-door-fill me-1"></i>Beranda</Link>
-                        <Link to="/katalog" className="nav-link me-2"><i class="bi bi-collection-fill me-1"></i>Katalog</Link>
-                        <Link to="/manajemenbuku" className="nav-link"><i class="fa-solid fa-book-bookmark me-1"></i>Manajemen Buku</Link>
+                        <Link to="/" className="nav-link me-2" href="/"><i className="bi bi-house-door-fill me-1"></i>Beranda</Link>
+                        <Link to="/katalog" className="nav-link me-2"><i className="bi bi-collection-fill me-1"></i>Katalog</Link>
+                        <Link to="/manajemenbuku" className="nav-link"><i className="fa-solid fa-book-bookmark me-1"></i>Manajemen Buku</Link>
                     </div>
                 </div>
             </div>
