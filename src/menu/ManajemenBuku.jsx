@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ManageBookTable from '../tables/ManageBookTable';
 
 function ManajemenBuku() {
@@ -30,9 +29,9 @@ function ManajemenBuku() {
                             </button>
                         </div>
                         <div className="col-5 d-flex">
-                            <Link to="/manajemenbuku" type="button" className="btn btn-secondary me-2">
+                            <a href="/manajemenbuku" type="button" className="btn btn-secondary me-2">
                                 <i className="bi bi-arrow-clockwise"></i>
-                            </Link>
+                            </a>
                             <div className="input-group">
                                 <input id="inSearchManbuk" type="text" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...."/>
                                 <button type="submit" className="btn btn-success"><i className="bi bi-search me-1"></i>Search</button>
