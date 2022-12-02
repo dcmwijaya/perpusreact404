@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ManageBookTable from '../tables/ManageBookTable';
 
 function ManajemenBuku() {
     //PART DATA
+    const [formMode, setFormMode] = useState("");
+
     //PART EVENT HANDLING
+    function showCreateForm(){
+        setFormMode("show");
+    }
+    function showEditForm(){
+        setFormMode("show");
+    }
 
     return (
         <div className="container mt-5 mb-5 w-75">
@@ -11,17 +20,12 @@ function ManajemenBuku() {
                 <strong>Manajemen buku perpusreact404</strong>
             </h3><hr></hr>
 
-            {/* Input Form */}
-            <div id="form">
-                {/* Layout Form */}
-            </div>
-
-            {/* Tabel Data Buku */}
+            {/* Action */}
             <div className="container p-4">
-                <div id="TombolAksi" className="mb-3">
+                <div id="TombolAksi">
                     <div className="row">
                         <div className="col-7">
-                            <button type="button" className="btn btn-primary">
+                            <button type="button" className="btn btn-success" onClick={showCreateForm}>
                                 <i className="fa-solid fa-file-pen me-1"></i>Create
                             </button>
                         </div>
@@ -37,58 +41,31 @@ function ManajemenBuku() {
                     </div>
                 </div><br></br>
 
-                <table className="table table-sm">
-                    <caption>Total list of books: 2</caption>
-                    <thead className="table-success">
-                        <tr>
-                            <th scope="col" className="col-md-1">
-                                <i className="fa-solid fa-arrow-up-1-9"></i>
-                            </th>
-                            <th scope="col" className="col-md-3">
-                                <i className="fa-solid fa-book-open-reader me-1"></i>Title
-                            </th>
-                            <th scope="col" className="col-md-3">
-                                <i className="fa-solid fa-user-pen me-1"></i>Author
-                            </th>
-                            <th scope="col" className="col-md-2">
-                                <i className="bi bi-calendar-range-fill me-1"></i>Publish
-                            </th>
-                            <th scope="col" className="col-md-3">
-                                <i className="fa-solid fa-wrench me-1"></i>Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Learn Fuzzy Logic</td>
-                            <td>George Otto Mark</td>
-                            <td>2022-10-10</td>
-                            <td>
-                                <button type="button" className="btn btn-success btn-sm m-1">
-                                    <i className="fa-solid fa-pen-to-square me-1"></i>Update
-                                </button>
-                                <button type="button" className="btn btn-danger btn-sm m-1">
-                                    <i className="fa-solid fa-trash-can me-1"></i>Delete
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Method In IT2FL</td>
-                            <td>Lotfi A. Zadeh</td>
-                            <td>2022-08-08</td>
-                            <td>
-                                <button type="button" className="btn btn-success btn-sm m-1">
-                                    <i className="fa-solid fa-pen-to-square me-1"></i>Update
-                                </button>
-                                <button type="button" className="btn btn-danger btn-sm m-1">
-                                    <i className="fa-solid fa-trash-can me-1"></i>Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                {/* Input Form */}
+                {formMode === "show" && (
+                    <div id="form" className="card py-2 my-2 bg-secondary">
+                        <div className="card-body">
+                            <h4>Book Forms</h4>
+                            <form className="row">
+                                <div className="col-4">
+                                    <input type="text" name="judul" className="form-control mx-2" placeholder="Title...." />
+                                </div>
+                                <div className="col-3">
+                                    <input type="text" name="pengarang" className="form-control mx-2" placeholder="Author...." />
+                                </div>
+                                <div className="col-3">
+                                    <input type="text" name="publikasi" className="form-control mx-2" placeholder="Publish...." />
+                                </div>
+                                <div className="col-2">
+                                    <a type="submit" className="btn btn-dark"><i class="fa-regular fa-square-check me-1"></i>Submit</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                )}
+
+                {/* Tabel Data Buku */}
+                <ManageBookTable showEdit={showEditForm} />
             </div>
         </div>
     );
