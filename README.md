@@ -22,7 +22,7 @@ npm start
 ## Connect Server Database
 
 Adapun cara connect server database yaitu dapat anda lakukan sebagai berikut :
-1. Search "services" di bagian Taskbar -> MongoDB Server (MongoDB) -> Run
+1. Search "services" di bagian Taskbar -> MongoDB Server (MongoDB) -> Klik Start , sampai statusnya menjadi "Running".
 2. Buka direktori "backend" -> Buka CMD -> Ketik seperti dibawah ini :
 
 ````bash
