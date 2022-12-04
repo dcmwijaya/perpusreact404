@@ -6,21 +6,60 @@ function ManajemenBuku() {
     //PART DATA
     const [formMode, setFormMode] = useState("");
     const [books, setBooks] = useState([]);
+    const [inputForm, setInputForm] = useState();
 
     //PART EVENT HANDLING
     function showCreateForm(){
-        setFormMode("show");
+        setInputForm("");
+        setFormMode("create");
     }
-    function showEditForm(){
-        setFormMode("show");
+    function showEditForm(book){
+        setInputForm(book);
+        setFormMode("edit");
     }
     userEffect(() => {
         retrieveData();
     }, []);
     function retrieveData() {
-        axios.get("http://localhost:3000/manajemenbuku")
+        axios.get("http://localhost:4000/book")
         .then((response) => { setBooks(response.data) })
         .catch(function (error) { console.log(error.response.data) });
+    }
+    function handleJudul(e) {
+        setInputForm({ ...inputForm, judul: e.target.value })
+    }
+    function handlePengarang(e) {
+        setInputForm({ ...inputForm, pengarang: e.target.value })
+    }
+    function handlePublikasi(e) {
+        setInputForm({ ...inputForm, publikasi: e.target.value })
+    }
+    function submitForm(event) {
+        event.preventDefault();
+        if (formMode === "create"){
+            axios.post("http://localhost:4000/book/add", inputForm)
+            .then(() => {
+                alert("Data berhasil ditambahkan!");
+                retrieveData();
+            })
+            .catch((error) => { console.log(error.response) })
+        }
+        if (formMode === "edit"){
+            axios.post("http://localhost:4000/book/update/", inputForm._id, inputForm)
+            .then(() => {
+                alert("Data berhasil diubah!");
+                retrieveData();
+            })
+            .catch((error) => { console.log(error.response) })
+        }
+    }
+    function deleteOne(book) {
+        axios.post("http://localhost:4000/book/delete/", inputForm._id, inputForm)
+        .then(() => {
+            alert("Data berhasil dihapus!");
+            retrieveData();
+        })
+        .catch((error) => { console.log(error.response) })
     }
 
     return (
@@ -51,19 +90,19 @@ function ManajemenBuku() {
                 </div><br></br>
 
                 {/* Input Form */}
-                {formMode === "show" && (
+                {formMode === "" && (
                     <div id="form" className="card py-2 my-2 bg-secondary">
                         <div className="card-body">
                             <h4>Book Forms</h4>
-                            <form className="row">
+                            <form className="row" onSubmit={submitForm}>
                                 <div className="col-4">
-                                    <input type="text" name="judul" className="form-control mx-2" placeholder="Title...." />
+                                    <input type="text" name="judul" className="form-control mx-2" placeholder="Title...." value={inputForm.judul || ""} onChange={handleJudul} />
                                 </div>
                                 <div className="col-3">
-                                    <input type="text" name="pengarang" className="form-control mx-2" placeholder="Author...." />
+                                    <input type="text" name="pengarang" className="form-control mx-2" placeholder="Author...." value={inputForm.pengarang || ""} onChange={handlePengarang} />
                                 </div>
                                 <div className="col-3">
-                                    <input type="text" name="publikasi" className="form-control mx-2" placeholder="Publish...." />
+                                    <input type="text" name="publikasi" className="form-control mx-2" placeholder="Publish...." value={inputForm.publikasi || ""} onChange={handlePublikasi} />
                                 </div>
                                 <div className="col-2">
                                     <a type="submit" className="btn btn-dark"><i class="fa-regular fa-square-check me-1"></i>Submit</a>
@@ -74,7 +113,7 @@ function ManajemenBuku() {
                 )}
 
                 {/* Tabel Data Buku */}
-                <ManageBookTable showEdit={showEditForm} book={books} />
+                <ManageBookTable showEdit={showEditForm} books={books} requestToDelete={deleteOne} />
             </div>
         </div>
     );

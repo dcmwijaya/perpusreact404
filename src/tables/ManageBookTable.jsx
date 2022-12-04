@@ -1,8 +1,11 @@
 import React from 'react';
 
-function ManageBookTable({ showEdit, books }) {
-    function editData(){
-        showEdit();
+function ManageBookTable({ showEdit, books, requestToDelete }) {
+    function editData(book){
+        showEdit(book);
+    }
+    function deleteData(book){
+        requestToDelete(book);
     }
 
     return (
@@ -35,10 +38,10 @@ function ManageBookTable({ showEdit, books }) {
                     <td>{book.pengarang}</td>
                     <td>{book.publikasi}</td>
                     <td>
-                        <button type="button" className="btn btn-primary btn-sm m-1" onClick={()=>editData()}>
+                        <button type="button" className="btn btn-primary btn-sm m-1" onClick={()=>editData(book)}>
                             <i className="fa-solid fa-pen-to-square me-1"></i>Update
                         </button>
-                        <button type="button" className="btn btn-danger btn-sm m-1">
+                        <button type="button" className="btn btn-danger btn-sm m-1" onClick={()=>deleteData(book)}>
                             <i className="fa-solid fa-trash-can me-1"></i>Delete
                         </button>
                     </td>
