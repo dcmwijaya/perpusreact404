@@ -1,4 +1,4 @@
-import React, { useState, userEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import KatalogTable from '../tables/KatalogTable';
 import axios from "axios";
 
@@ -23,8 +23,7 @@ function Katalog() {
             </h3><hr></hr>
 
             {/* Tabel Data Buku */}
-            <KatalogTable />
-            <p>{JSON.stringify(books)}</p>
+            <KatalogTable books={books} />
         </div>
     );
 }

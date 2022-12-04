@@ -74,8 +74,7 @@ function ManajemenBuku() {
                 )}
 
                 {/* Tabel Data Buku */}
-                <ManageBookTable showEdit={showEditForm} />
-                <p>{JSON.stringify(books)}</p>
+                <ManageBookTable showEdit={showEditForm} books={books} />
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function KatalogTable() {
+function KatalogTable({books}) {
     return (
         <div className="container p-4">
             <div id="TombolAksi">
@@ -18,7 +18,7 @@ function KatalogTable() {
                 </div>
             </div><br></br>
             <table className="table table-sm">
-                <caption>Total list of books: 2</caption>
+                <caption>List of books:</caption>
                 <thead className="table-success">
                     <tr>
                         <th scope="col" className="col-md-1">
@@ -36,18 +36,14 @@ function KatalogTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Learn Fuzzy Logic</td>
-                        <td>George Otto Mark</td>
-                        <td>2022/10/10</td>
+                    {books.map((book, index) => (
+                    <tr key={index}>
+                        <th scope="row">{index + 1}</th>
+                        <td>{book.judul}</td>
+                        <td>{book.pengarang}</td>
+                        <td>{book.publikasi}</td>
                     </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>Method In IT2FL</td>
-                        <td>Lotfi A. Zadeh</td>
-                        <td>2022/08/08</td>
-                    </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
