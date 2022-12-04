@@ -18,7 +18,7 @@ function ManajemenBuku() {
         retrieveData();
     }, []);
     function retrieveData() {
-        axios.get("http://localhost:4000/book")
+        axios.get("http://localhost:3000/manajemenbuku")
         .then((response) => { setBooks(response.data) })
         .catch(function (error) { console.log(error.response.data) });
     }
@@ -74,7 +74,7 @@ function ManajemenBuku() {
                 )}
 
                 {/* Tabel Data Buku */}
-                <ManageBookTable showEdit={showEditForm} books={books} />
+                <ManageBookTable showEdit={showEditForm} book={books} />
             </div>
         </div>
     );

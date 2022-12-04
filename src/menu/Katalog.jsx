@@ -11,7 +11,7 @@ function Katalog() {
         retrieveData();
     }, []);
     function retrieveData() {
-        axios.get("http://localhost:4000/book")
+        axios.get("http://localhost:3000/katalog")
         .then((response) => { setBooks(response.data) })
         .catch(function (error) { console.log(error.response.data) });
     }
@@ -23,7 +23,7 @@ function Katalog() {
             </h3><hr></hr>
 
             {/* Tabel Data Buku */}
-            <KatalogTable books={books} />
+            <KatalogTable book={books} />
         </div>
     );
 }
