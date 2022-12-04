@@ -3,14 +3,15 @@
 ![CSS3](https://img.shields.io/badge/-CSS%203-green.svg?&logo=css3)
 ![JS](https://img.shields.io/badge/-Javascript-brown.svg?&logo=javascript)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap%205-white.svg?&logo=bootstrap)
+![NodeJS](https://img.shields.io/badge/-Node%20JS-light.svg?&color=9FE2BF&logo=node.js)
 ![MongoDB](https://img.shields.io/badge/-Mongo%20DB-darkgreen.svg?&logo=mongodb)
 
 # PerpusReact404
 <p>PerpusReact404 merupakan hasil dari pelatihan reguler CAMP404 Batch 16 yang saya kerjakan secara custom.</p>
 
-## Connect Server Database
+## Start Project
 
-Untuk memulai project ini, anda perlu melakukan seperti berikut :
+Untuk memulai project ini, anda perlu membuka CMD di dalam direktori "perpusreact404" lalu ketik :
 
 ````bash
 npm start
