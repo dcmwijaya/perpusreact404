@@ -8,4 +8,20 @@
 # PerpusReact404
 <p>PerpusReact404 merupakan hasil dari pelatihan reguler CAMP404 Batch 16 yang saya kerjakan secara custom.</p>
 
-<b>DALAM PROSES PENGERJAAN.... HARAP BERSABAR !!!</b>
+## Connect Server Database
+
+Untuk memulai project ini, anda perlu melakukan seperti berikut :
+
+````bash
+npm start
+````
+
+## Connect Server Database
+
+Adapun cara connect server database yaitu dapat anda lakukan sebagai berikut :
+1. Search "services" di bagian Taskbar -> MongoDB Server (MongoDB) -> Run
+2. Buka direktori "backend" -> Buka CMD -> Ketik seperti dibawah ini :
+
+````bash
+npx nodemon server.js
+````

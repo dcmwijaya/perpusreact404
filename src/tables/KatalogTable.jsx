@@ -40,13 +40,13 @@ function KatalogTable() {
                         <th scope="row">1</th>
                         <td>Learn Fuzzy Logic</td>
                         <td>George Otto Mark</td>
-                        <td>2022-10-10</td>
+                        <td>2022/10/10</td>
                     </tr>
                     <tr>
                         <th>2</th>
                         <td>Method In IT2FL</td>
                         <td>Lotfi A. Zadeh</td>
-                        <td>2022-08-08</td>
+                        <td>2022/08/08</td>
                     </tr>
                 </tbody>
             </table>

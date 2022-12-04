@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, userEffect } from 'react';
 import ManageBookTable from '../tables/ManageBookTable';
+import axios from "axios";
 
 function ManajemenBuku() {
     //PART DATA
     const [formMode, setFormMode] = useState("");
+    const [books, setBooks] = useState([]);
 
     //PART EVENT HANDLING
     function showCreateForm(){
@@ -11,6 +13,14 @@ function ManajemenBuku() {
     }
     function showEditForm(){
         setFormMode("show");
+    }
+    userEffect(() => {
+        retrieveData();
+    }, []);
+    function retrieveData() {
+        axios.get("http://localhost:4000/book")
+        .then((response) => { setBooks(response.data) })
+        .catch(function (error) { console.log(error.response.data) });
     }
 
     return (
@@ -65,6 +75,7 @@ function ManajemenBuku() {
 
                 {/* Tabel Data Buku */}
                 <ManageBookTable showEdit={showEditForm} />
+                <p>{JSON.stringify(books)}</p>
             </div>
         </div>
     );

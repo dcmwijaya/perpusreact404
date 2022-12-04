@@ -32,7 +32,7 @@ function ManageBookTable({ showEdit }) {
                     <th scope="row">1</th>
                     <td>Learn Fuzzy Logic</td>
                     <td>George Otto Mark</td>
-                    <td>2022-10-10</td>
+                    <td>2022/10/10</td>
                     <td>
                         <button type="button" className="btn btn-primary btn-sm m-1" onClick={()=>editData()}>
                             <i className="fa-solid fa-pen-to-square me-1"></i>Update
@@ -46,7 +46,7 @@ function ManageBookTable({ showEdit }) {
                     <th>2</th>
                     <td>Method In IT2FL</td>
                     <td>Lotfi A. Zadeh</td>
-                    <td>2022-08-08</td>
+                    <td>2022/08/08</td>
                     <td>
                         <button type="button" className="btn btn-primary btn-sm m-1" onClick={()=>editData()}>
                             <i className="fa-solid fa-pen-to-square me-1"></i>Update
