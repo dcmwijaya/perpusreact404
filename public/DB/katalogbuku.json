@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "638c4eb2433c0a8e007439b7"
+  },
+  "judul": "Learn Fuzzy Logic",
+  "pengarang": "George Otto Mark",
+  "publikasi": "2022/10/10"
+},{
+  "_id": {
+    "$oid": "638c4eb2433c0a8e007439b8"
+  },
+  "judul": "Method In IT2FL",
+  "pengarang": "Lotfi A. Zadeh",
+  "publikasi": "2022/08/08"
+}]
