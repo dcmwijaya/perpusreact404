@@ -31,5 +31,5 @@ npx nodemon server.js
 
 <br>
 
-## Connect Server Database
+## Announcement
 <b>Terdapat bug pada proses penampilan data, sehingga membutuhkan proses perbaikan pada bagian port atau route... Hal tersebut dapat memakan waktu yang panjang dikarenakan kegiatan programmer sedang padat merayap akhir2 ini.. Harap bersabar :)</b>
