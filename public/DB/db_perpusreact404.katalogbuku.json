@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b00"
+  },
+  "judul": "Sang Pemimpi",
+  "pengarang": "Andrea Hirata",
+  "publikasi": "07/2006"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b01"
+  },
+  "judul": "Layangan Putus",
+  "pengarang": "Mommy ASF",
+  "publikasi": "02/2010"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b02"
+  },
+  "judul": "The Star and I",
+  "pengarang": "Ilana Tan",
+  "publikasi": "02/2012"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b03"
+  },
+  "judul": "Hujan",
+  "pengarang": "Tere Liye",
+  "publikasi": "01/2016"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b04"
+  },
+  "judul": "Laut Bercerita",
+  "pengarang": "Leila S. Chudori",
+  "publikasi": "10/2017"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b05"
+  },
+  "judul": "Cantik Itu Luka",
+  "pengarang": "Eka Kurniawan",
+  "publikasi": "01/2018"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b06"
+  },
+  "judul": "Kita Pergi Hari Ini",
+  "pengarang": "Ziggy Zezsyazeoviennazabrizkie",
+  "publikasi": "10/2021"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b07"
+  },
+  "judul": "Bibi Gill",
+  "pengarang": "Tere Liye",
+  "publikasi": "02/2022"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b08"
+  },
+  "judul": "Home Sweet Loan",
+  "pengarang": "Almira Bastari",
+  "publikasi": "02/2022"
+},
+{
+  "_id": {
+    "$oid": "6560a9069e73a5a4eebe2b09"
+  },
+  "judul": "Heartbreak Motel",
+  "pengarang": "Ika Natassa",
+  "publikasi": "04/2022"
+}]

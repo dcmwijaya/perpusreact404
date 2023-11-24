@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+mongoose.set('strictQuery', true);
 mongoose.connect("mongodb://localhost:27017/db_perpusreact404");
 
 const db = mongoose.connection;
