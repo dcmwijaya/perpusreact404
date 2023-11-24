@@ -9,7 +9,7 @@
 # PerpusReact404
 <p>PerpusReact404 is the result of the regular CAMP404 Batch 16 training that I did custom.</p>
 
-<br>
+<br><br>
 
 ## Features / Framework / Tools
 | Part | Description |
@@ -18,7 +18,7 @@
 | Framework | React, Express, Mongoose, Cors, Morgan, Bootstrap 5 |
 | Tools | Visual Studio Code, MongoDB |
 
-<br>
+<br><br>
 
 ## Download & Install
 1. Visual Studio Code :
@@ -40,18 +40,20 @@
    
 4. Visual Studio Code Extensions : ``` Prettier ```
 
-<br>
+<br><br>
 
 ## Database
-1. Create a ``` connection ``` in ```MongoDB ``` as shown in the following image:
+1. Create a ``` connection ``` in ``` MongoDB ``` as shown in the following image:
    
-   <img width="500" height="430" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
+   <img width="400" height="380" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
 
 2. Create a ``` database ``` and ``` collection ``` as shown in the image below:
    
-   <img width="800" height="400" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
+   <img width="946" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
 
-3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Look for the file called ``` db_perpusreact404.katalogbuku.json ```, it is located in the ``` perpusreact404/public/DB ``` directory.<br>
+3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Look for the file called ``` db_perpusreact404.katalogbuku.json ```, it is located in the ``` perpusreact404/public/DB ``` directory.
+
+   <img width="946" src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db"><br>
 
 4. Open the ``` backend ``` directory -> Open ``` CMD ``` inside the directory -> Type as below:
 
@@ -59,7 +61,7 @@
    npx nodemon server.js
    ````
 
-<br>
+<br><br>
 
 ## Get Started
 1. Download and extract this repository.
@@ -74,41 +76,43 @@
 
 3. Please access the features and enjoy [Done].
 
-<br>
+<br><br>
 
 ## Highlights
 <table>
 <tr>
-<th width="420">Home</th>
-<th width="420"></th>
+<th width="840">Home</th>
 </tr>
 <tr>
 <td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/070a1936-5038-438a-9731-a27387344195" alt="home"></td>
-<td><img src="" alt=""></td>
 </tr>
 </table>
 <table>
 <tr>
-<th width="420"></th>
-<th width="420"></th>
+<th width="210">Create</th>
+<th width="210">Read</th>
+<th width="210">Update</th>
+<th width="210">Delete</th>
 </tr>
 <tr>
-<td><img src="" alt=""></td>
-<td><img src="" alt=""></td>
+<td><img src="" alt="create-data"></td>
+<td><img src="" alt="read-data"></td>
+<td><img src="" alt="update-data"></td>
+<td><img src="" alt="delete-data"></td>
 </tr>
 </table>
 
-<br>
+<br><br>
 
 ## Disclaimer
 This application has been created by including third-party sources. Third parties here are service providers, whose services are in the form of libraries, frameworks, and others. I thank you very much for the service. It has proven to be very helpful and implementable.
 
-<br>
+<br><br>
 
 ## Reminder
 There is a bug in the data display process, so it requires a repair process in the port or route section... It can take a long time because the programmer's activities are busy crawling lately... Please be patient :)
 
-<br>
+<br><br>
 
 ## LICENSE
 MIT License - Copyright (c) 2022 - Devan C. M. Wijaya, S.Kom
