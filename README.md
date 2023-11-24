@@ -45,15 +45,15 @@
 ## Database
 1. Create a ``` connection ``` in ``` MongoDB ``` as shown in the following image:
    
-   <img width="400" height="380" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
+   <img width="400" height="360" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
 
 2. Create a ``` database ``` and ``` collection ``` as shown in the image below:
    
-   <img width="946" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
+   <img width="840" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
 
 3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Look for the file called ``` db_perpusreact404.katalogbuku.json ```, it is located in the ``` perpusreact404/public/DB ``` directory.
 
-   <img width="946" src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db"><br>
+   <img width="840" src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db"><br>
 
 4. Open the ``` backend ``` directory -> Open ``` CMD ``` inside the directory -> Type as below:
 
