@@ -71,11 +71,11 @@
 ## Highlights
 <table>
 <tr>
-<th width="420"></th>
+<th width="420">Home</th>
 <th width="420"></th>
 </tr>
 <tr>
-<td><img src="" alt=""></td>
+<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/070a1936-5038-438a-9731-a27387344195" alt="home"></td>
 <td><img src="" alt=""></td>
 </tr>
 </table>
