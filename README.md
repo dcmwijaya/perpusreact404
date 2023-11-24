@@ -43,9 +43,17 @@
 <br>
 
 ## Database
-1. Search ``` services ``` in the ``` Taskbar ``` -> ``` MongoDB Server (MongoDB) ``` -> Click ``` Start ```, until the status becomes ``` Running ```.
+1. Create a ``` connection ``` in ```MongoDB ``` as shown in the following image:
+   
+   <img width="500" height="430" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
 
-2. Open the ``` backend ``` directory -> Open ``` CMD ``` inside the directory -> Type as below:
+2. Create a ``` database ``` and ``` collection ``` as shown in the image below:
+   
+   <img width="800" height="400" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
+
+3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Look for the file called ``` db_perpusreact404.katalogbuku.json ```, it is located in the ``` perpusreact404/public/DB ``` directory.<br>
+
+4. Open the ``` backend ``` directory -> Open ``` CMD ``` inside the directory -> Type as below:
 
    ````bash
    npx nodemon server.js
@@ -62,9 +70,9 @@
    npm start
    ````
 
-3. Open your ``` browser ``` (New tab), then type -> ``` http://localhost:3000/ ``` or customize the one on your ``` CMD ```.<br>
+   <img src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">
 
-4. Please access the features and enjoy [Done].
+3. Please access the features and enjoy [Done].
 
 <br>
 
