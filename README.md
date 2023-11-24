@@ -15,7 +15,7 @@
 | Part | Description |
 | --- | --- |
 | Features | Create, Read, Update, Delete, ETC |
-| Framework | React.js (Express, Mongoose, Cors, Morgan) , Bootstrap 5 |
+| Framework | React, Express, Mongoose, Cors, Morgan, Bootstrap 5 |
 | Tools | Visual Studio Code, MongoDB |
 
 <br>
