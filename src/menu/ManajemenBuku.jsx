@@ -34,25 +34,25 @@ function ManajemenBuku() {
             .catch((error) => { console.log(error.response.data) })
     }
 
-    // if (formMode === "edit"){
-    //     axios
-    //         .put("http://localhost:4000/book/update/", inputForm._id, inputForm)
-    //         .then(() => {
-    //             retrieveData();
-    //             alert("Data berhasil diubah!");
-    //         })
-    //         .catch((error) => { console.log(error.response.data) })
-    // }
-
-    // function deleteData(book) {
-    //     axios
-    //         .delete("http://localhost:4000/book/delete/", book._id)
-    //         .then(() => {
-    //             retrieveData();
-    //             alert("Data berhasil dihapus!");
-    //         })
-    //         .catch((error) => { console.log(error.response.data) })
-    // }
+    function updateData(inputBook){
+        axios
+        .put("http://localhost:4000/book/update/", inputBook._id, inputBook)
+        .then(() => {
+            retrieveData();
+            alert("Data berhasil diperbarui!");
+        })
+        .catch((error) => { console.log(error.response.data) })
+    }
+    
+    function deleteData(book) {
+        axios
+            .delete("http://localhost:4000/book/delete/", book._id)
+            .then(() => {
+                retrieveData();
+                alert("Data berhasil dihapus!");
+            })
+            .catch((error) => { console.log(error.response.data) })
+    }
 
     return (
         <div className="container mt-5 mb-5 w-75">
@@ -85,14 +85,14 @@ function ManajemenBuku() {
                 {form === "create" && (
                     <FormCreate store={storeData} />
                 )}
-
+                
                 {form === "edit" && (
-                    <FormUpdate />
+                    <FormUpdate update={updateData} />
                 )}
 
                 <br></br>
                 
-                <Table bookList={books} />
+                <Table bookList={books} remove={deleteData} />
             </div>
         </div>
     );

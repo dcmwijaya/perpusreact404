@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-function FormUpdate() {
-    const [inputBook, setInputBook, setForm] = useState();
+function FormUpdate({update}) {
+    const [setForm, inputBook, setInputBook] = useState();
 
     function handleJudul(event) {
         setInputBook({ ...inputBook, judul: event.target.value })
@@ -17,7 +17,7 @@ function FormUpdate() {
 
     function submitChange(event) {
         event.preventDefault();
-        // update(inputBook);
+        update(inputBook);
         setForm("");
     }
 
