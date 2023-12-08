@@ -111,7 +111,7 @@ Aplikasi ini dibuat dengan menyertakan sumber-sumber dari pihak ketiga. Pihak ke
 <br><br>
 
 ## Pengingat
-Update data and delete data is not yet possible, so the programmer takes a long time to solve the problem. Please be patient :)
+Perbarui data dan hapus data belum bisa dilakukan, sehingga programmer membutuhkan waktu yang cukup lama untuk menyelesaikan masalah tersebut. Mohon bersabar :)
 
 <br><br>
 
