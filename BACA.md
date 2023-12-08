@@ -111,7 +111,7 @@ Aplikasi ini dibuat dengan menyertakan sumber-sumber dari pihak ketiga. Pihak ke
 <br><br>
 
 ## Pengingat
-Terdapat bug pada proses penampilan data, sehingga membutuhkan perbaikan di bagian port atau rute... Bisa memakan waktu yang cukup lama karena kesibukan programmer yang padat merayap akhir-akhir ini... Mohon bersabar :)
+Update data and delete data is not yet possible, so the programmer takes a long time to solve the problem. Please be patient :)
 
 <br><br>
 
