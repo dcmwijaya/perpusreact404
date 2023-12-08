@@ -84,7 +84,7 @@
 <th width="840">Home</th>
 </tr>
 <tr>
-<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/070a1936-5038-438a-9731-a27387344195" alt="home"></td>
+<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/7abf6af7-44b9-4bb0-8d27-7b5b8d10f19d" alt="home"></td>
 </tr>
 </table>
 <table>
@@ -96,7 +96,7 @@
 </tr>
 <tr>
 <td><img src="" alt="create-data"></td>
-<td><img src="" alt="read-data"></td>
+<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/f353bc1c-7e3d-40a7-bcea-1594dfe635d2" alt="read-data"></td>
 <td><img src="" alt="update-data"></td>
 <td><img src="" alt="delete-data"></td>
 </tr>
