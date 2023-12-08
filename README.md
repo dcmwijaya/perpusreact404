@@ -110,7 +110,7 @@ This application has been created by including third-party sources. Third partie
 <br><br>
 
 ## Reminder
-There is a bug in the data display process, so it requires a repair process in the port or route section... It can take a long time because the programmer's activities are busy crawling lately... Please be patient :)
+Update data and delete data is not yet possible, so the programmer takes a long time to solve the problem. Please be patient :)
 
 <br><br>
 
