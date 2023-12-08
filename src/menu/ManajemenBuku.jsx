@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import FormCreate from '../child/FormCreate';
+import FormUpdate from '../child/FormUpdate';
 import Table from '../child/Table';
 import axios from "axios";
 
 function ManajemenBuku() {
     //PART DATA
     const [books, setBooks] = useState([]);
-    
-    //PART EVENT HANDLING
+    const [form, setForm] = useState();
+
     useEffect(() => {
         retrieveData();
     }, []);
@@ -17,6 +18,10 @@ function ManajemenBuku() {
             .get("http://localhost:4000/book")
             .then((response) => { setBooks(response.data) })
             .catch(function (error) { console.log(error.response.data) });
+    }
+
+    function showCreate(){
+        setForm("create");
     }
     
     function storeData(inputBook) {
@@ -59,7 +64,7 @@ function ManajemenBuku() {
                 <div id="TombolAksi">
                     <div className="row">
                         <div className="col-7">
-                            <button type="button" className="btn btn-success">
+                            <button type="button" className="btn btn-success" onClick={showCreate}>
                                 <i className="fa-solid fa-file-pen me-1"></i>Create
                             </button>
                         </div>
@@ -73,9 +78,20 @@ function ManajemenBuku() {
                             </div>
                         </div>
                     </div>
-                </div><br></br>
+                </div>
 
-                <FormCreate store={storeData} />
+                <br></br>
+
+                {form === "create" && (
+                    <FormCreate store={storeData} />
+                )}
+
+                {form === "edit" && (
+                    <FormUpdate />
+                )}
+
+                <br></br>
+                
                 <Table bookList={books} />
             </div>
         </div>

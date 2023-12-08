@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Table({ bookList }) {
+    const [setForm, setInputBook] = useState();
+    
+    function showEdit(book){
+        setInputBook(book);
+        setForm("edit");
+    }
+
     return (
         <table className="table table-sm">
             <thead className="table-success">
@@ -30,7 +37,7 @@ function Table({ bookList }) {
                     <td>{book.pengarang}</td>
                     <td>{book.publikasi}</td>
                     <td>
-                        <button type="button" className="btn btn-primary btn-sm m-1">
+                        <button type="button" className="btn btn-primary btn-sm m-1" onClick={() => showEdit(book)}>
                             <i className="fa-solid fa-pen-to-square me-1"></i>Update
                         </button>
                         <button type="button" className="btn btn-danger btn-sm m-1">
