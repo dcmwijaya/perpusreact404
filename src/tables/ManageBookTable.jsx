@@ -1,16 +1,16 @@
 import React from 'react';
 
-function ManageBookTable({ showEdit, books, requestToDelete }) {
+function ManageBookTable({ showEdit, bookList, requestToDelete }) {
     function editData(book){
         showEdit(book);
     }
+    
     function deleteData(book){
         requestToDelete(book);
     }
 
     return (
         <table className="table table-sm">
-            <caption>List of books:</caption>
             <thead className="table-success">
                 <tr>
                     <th scope="col" className="col-md-1">
@@ -31,7 +31,7 @@ function ManageBookTable({ showEdit, books, requestToDelete }) {
                 </tr>
             </thead>
             <tbody>
-                {books.map((book, index) => (
+                {bookList.map((book, index) => (
                 <tr key={index}>
                     <th scope="row">{index + 1}</th>
                     <td>{book.judul}</td>

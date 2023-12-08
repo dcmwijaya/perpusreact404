@@ -1,65 +1,77 @@
-import React, { useState, userEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ManageBookTable from '../tables/ManageBookTable';
 import axios from "axios";
 
 function ManajemenBuku() {
     //PART DATA
-    const [formMode, setFormMode] = useState("");
     const [books, setBooks] = useState([]);
-    const [inputForm, setInputForm] = useState();
+    const [formMode, setFormMode] = useState([]);
+    const [inputForm, setInputForm] = useState([]);
 
     //PART EVENT HANDLING
     function showCreateForm(){
         setInputForm("");
         setFormMode("create");
     }
+
     function showEditForm(book){
         setInputForm(book);
         setFormMode("edit");
     }
-    userEffect(() => {
+
+    useEffect(() => {
         retrieveData();
     }, []);
+
     function retrieveData() {
-        axios.get("http://localhost:4000/book")
-        .then((response) => { setBooks(response.data) })
-        .catch(function (error) { console.log(error.response.data) });
+        axios
+            .get("http://localhost:4000/book")
+            .then((response) => { setBooks(response.data) })
+            .catch(function (error) { console.log(error.response.data) });
     }
+
     function handleJudul(e) {
         setInputForm({ ...inputForm, judul: e.target.value })
     }
+
     function handlePengarang(e) {
         setInputForm({ ...inputForm, pengarang: e.target.value })
     }
+
     function handlePublikasi(e) {
         setInputForm({ ...inputForm, publikasi: e.target.value })
     }
+
     function submitForm(event) {
         event.preventDefault();
         if (formMode === "create"){
-            axios.post("http://localhost:4000/book/add", inputForm)
-            .then(() => {
-                alert("Data berhasil ditambahkan!");
-                retrieveData();
-            })
-            .catch((error) => { console.log(error.response) })
+            axios
+                .post("http://localhost:4000/book/add", inputForm)
+                .then(() => {
+                    alert("Data berhasil ditambahkan!");
+                    retrieveData();
+                })
+                .catch((error) => { console.log(error.response) })
         }
         if (formMode === "edit"){
-            axios.post("http://localhost:4000/book/update/", inputForm._id, inputForm)
+            axios
+                .post("http://localhost:4000/book/update/", inputForm._id, inputForm)
+                .then(() => {
+                    alert("Data berhasil diubah!");
+                    retrieveData();
+                })
+                .catch((error) => { console.log(error.response) })
+        }
+    }
+
+    function deleteOne(book) {
+        axios
+            .post("http://localhost:4000/book/delete/", inputForm._id, inputForm)
             .then(() => {
-                alert("Data berhasil diubah!");
+                alert("Data berhasil dihapus!");
                 retrieveData();
             })
             .catch((error) => { console.log(error.response) })
-        }
-    }
-    function deleteOne(book) {
-        axios.post("http://localhost:4000/book/delete/", inputForm._id, inputForm)
-        .then(() => {
-            alert("Data berhasil dihapus!");
-            retrieveData();
-        })
-        .catch((error) => { console.log(error.response) })
     }
 
     return (
@@ -113,7 +125,7 @@ function ManajemenBuku() {
                 )}
 
                 {/* Tabel Data Buku */}
-                <ManageBookTable showEdit={showEditForm} books={books} requestToDelete={deleteOne} />
+                <ManageBookTable showEdit={showEditForm} bookList={books} requestToDelete={deleteOne} />
             </div>
         </div>
     );
