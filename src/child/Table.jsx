@@ -1,14 +1,6 @@
 import React from 'react';
 
-function ManageBookTable({ showEdit, bookList, requestToDelete }) {
-    function editData(book){
-        showEdit(book);
-    }
-    
-    function deleteData(book){
-        requestToDelete(book);
-    }
-
+function Table({ bookList }) {
     return (
         <table className="table table-sm">
             <thead className="table-success">
@@ -38,10 +30,10 @@ function ManageBookTable({ showEdit, bookList, requestToDelete }) {
                     <td>{book.pengarang}</td>
                     <td>{book.publikasi}</td>
                     <td>
-                        <button type="button" className="btn btn-primary btn-sm m-1" onClick={()=>editData(book)}>
+                        <button type="button" className="btn btn-primary btn-sm m-1">
                             <i className="fa-solid fa-pen-to-square me-1"></i>Update
                         </button>
-                        <button type="button" className="btn btn-danger btn-sm m-1" onClick={()=>deleteData(book)}>
+                        <button type="button" className="btn btn-danger btn-sm m-1">
                             <i className="fa-solid fa-trash-can me-1"></i>Delete
                         </button>
                     </td>
@@ -52,4 +44,4 @@ function ManageBookTable({ showEdit, bookList, requestToDelete }) {
     );
 }
 
-export default ManageBookTable
+export default Table

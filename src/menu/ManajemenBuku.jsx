@@ -1,24 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import ManageBookTable from '../tables/ManageBookTable';
+import FormCreate from '../child/FormCreate';
+import Table from '../child/Table';
 import axios from "axios";
 
 function ManajemenBuku() {
     //PART DATA
     const [books, setBooks] = useState([]);
-    const [formMode, setFormMode] = useState([]);
-    const [inputForm, setInputForm] = useState([]);
-
+    
     //PART EVENT HANDLING
-    function showCreateForm(){
-        setInputForm("");
-        setFormMode("create");
-    }
-
-    function showEditForm(book){
-        setInputForm(book);
-        setFormMode("edit");
-    }
-
     useEffect(() => {
         retrieveData();
     }, []);
@@ -29,50 +18,36 @@ function ManajemenBuku() {
             .then((response) => { setBooks(response.data) })
             .catch(function (error) { console.log(error.response.data) });
     }
-
-    function handleJudul(e) {
-        setInputForm({ ...inputForm, judul: e.target.value })
-    }
-
-    function handlePengarang(e) {
-        setInputForm({ ...inputForm, pengarang: e.target.value })
-    }
-
-    function handlePublikasi(e) {
-        setInputForm({ ...inputForm, publikasi: e.target.value })
-    }
-
-    function submitForm(event) {
-        event.preventDefault();
-        if (formMode === "create"){
-            axios
-                .post("http://localhost:4000/book/add", inputForm)
-                .then(() => {
-                    alert("Data berhasil ditambahkan!");
-                    retrieveData();
-                })
-                .catch((error) => { console.log(error.response) })
-        }
-        if (formMode === "edit"){
-            axios
-                .post("http://localhost:4000/book/update/", inputForm._id, inputForm)
-                .then(() => {
-                    alert("Data berhasil diubah!");
-                    retrieveData();
-                })
-                .catch((error) => { console.log(error.response) })
-        }
-    }
-
-    function deleteOne(book) {
+    
+    function storeData(inputBook) {
         axios
-            .post("http://localhost:4000/book/delete/", inputForm._id, inputForm)
+            .post("http://localhost:4000/book/add", inputBook)
             .then(() => {
-                alert("Data berhasil dihapus!");
                 retrieveData();
+                alert("Data berhasil ditambahkan!");
             })
-            .catch((error) => { console.log(error.response) })
+            .catch((error) => { console.log(error.response.data) })
     }
+
+    // if (formMode === "edit"){
+    //     axios
+    //         .put("http://localhost:4000/book/update/", inputForm._id, inputForm)
+    //         .then(() => {
+    //             retrieveData();
+    //             alert("Data berhasil diubah!");
+    //         })
+    //         .catch((error) => { console.log(error.response.data) })
+    // }
+
+    // function deleteData(book) {
+    //     axios
+    //         .delete("http://localhost:4000/book/delete/", book._id)
+    //         .then(() => {
+    //             retrieveData();
+    //             alert("Data berhasil dihapus!");
+    //         })
+    //         .catch((error) => { console.log(error.response.data) })
+    // }
 
     return (
         <div className="container mt-5 mb-5 w-75">
@@ -80,12 +55,11 @@ function ManajemenBuku() {
                 <strong>Manajemen buku perpusreact404</strong>
             </h3><hr></hr>
 
-            {/* Action */}
             <div className="container p-4">
                 <div id="TombolAksi">
                     <div className="row">
                         <div className="col-7">
-                            <button type="button" className="btn btn-success" onClick={showCreateForm}>
+                            <button type="button" className="btn btn-success">
                                 <i className="fa-solid fa-file-pen me-1"></i>Create
                             </button>
                         </div>
@@ -101,31 +75,8 @@ function ManajemenBuku() {
                     </div>
                 </div><br></br>
 
-                {/* Input Form */}
-                {formMode === "" && (
-                    <div id="form" className="card py-2 my-2 bg-secondary">
-                        <div className="card-body">
-                            <h4>Book Forms</h4>
-                            <form className="row" onSubmit={submitForm}>
-                                <div className="col-4">
-                                    <input type="text" name="judul" className="form-control mx-2" placeholder="Title...." value={inputForm.judul || ""} onChange={handleJudul} />
-                                </div>
-                                <div className="col-3">
-                                    <input type="text" name="pengarang" className="form-control mx-2" placeholder="Author...." value={inputForm.pengarang || ""} onChange={handlePengarang} />
-                                </div>
-                                <div className="col-3">
-                                    <input type="text" name="publikasi" className="form-control mx-2" placeholder="Publish...." value={inputForm.publikasi || ""} onChange={handlePublikasi} />
-                                </div>
-                                <div className="col-2">
-                                    <a type="submit" className="btn btn-dark"><i class="fa-regular fa-square-check me-1"></i>Submit</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                )}
-
-                {/* Tabel Data Buku */}
-                <ManageBookTable showEdit={showEditForm} bookList={books} requestToDelete={deleteOne} />
+                <FormCreate store={storeData} />
+                <Table bookList={books} />
             </div>
         </div>
     );
