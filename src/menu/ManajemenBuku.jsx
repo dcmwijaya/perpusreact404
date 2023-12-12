@@ -1,55 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import FormCreate from '../child/FormCreate';
-import FormUpdate from '../child/FormUpdate';
-import Table from '../child/Table';
-import axios from "axios";
+import React, { useState } from 'react';
 
-function ManajemenBuku() {
-    const [books, setBooks, form, setForm] = useState([]);
-
-    useEffect(() => {
-        retrieveData();
-    }, []);
-
-    function retrieveData() {
-        axios
-            .get("http://localhost:4000/book")
-            .then((response) => { setBooks(response.data) })
-            .catch(function (error) { console.log(error.response.data) });
-    }
+function ManajemenBuku({ bookList, store, update, remove }) {
+    const [form, setForm] = useState();
+    const [inputBook, setInputBook] = useState();
 
     function showCreate(){
         setForm("create");
     }
-    
-    function storeData(inputBook) {
-        axios
-            .post("http://localhost:4000/book/add", inputBook)
-            .then((res) => {
-                setBooks((prevBooks) => [...prevBooks, inputBook]);
-                alert("Data berhasil ditambahkan!");
-            })
-            .catch((error) => { console.log(error.response.data) })
+
+    function showEdit(book){
+        setInputBook(book);
+        setForm("edit");
     }
 
-    function updateData(inputBook){
-        axios
-        .put("http://localhost:4000/book/update/" + inputBook._id, inputBook)
-        .then((res) => {
-            retrieveData();
-            alert("Data berhasil diperbarui!");
-        })
-        .catch((error) => { console.log(error.response.data) })
+    function handleJudul(event) {
+        setInputBook({ ...inputBook, judul: event.target.value })
     }
-    
-    function deleteData(book) {
-        axios
-            .delete("http://localhost:4000/book/delete/" + book._id)
-            .then(() => {
-                retrieveData();
-                alert("Data berhasil dihapus!");
-            })
-            .catch((error) => { console.log(error.response.data) })
+
+    function handlePengarang(event) {
+        setInputBook({ ...inputBook, pengarang: event.target.value })
+    }
+
+    function handlePublikasi(event) {
+        setInputBook({ ...inputBook, publikasi: event.target.value })
+    }
+
+    function submitAdd(event) {
+        event.preventDefault();
+        store(inputBook);
+    }
+
+    function submitChange(event) {
+        event.preventDefault();
+        update(inputBook);
+        setForm("");
+    }
+
+    function deleteBook(book){
+        remove(book);
     }
 
     return (
@@ -81,16 +69,92 @@ function ManajemenBuku() {
                 <br></br>
 
                 {form === "create" && (
-                    <FormCreate store={storeData} />
+                    <div classname="card py-2 my-2 bg-secondary" id="formTambah">
+                        <div className="card-body">
+                            <h4>Tambah Buku</h4>
+                            <form className="row" onSubmit={submitAdd}>
+                                <div className="col-4">
+                                    <input type="text" name="judul" className="form-control mx-2" placeholder="Title...." onChange={handleJudul} />
+                                </div>
+                                <div className="col-3">
+                                    <input type="text" name="pengarang" className="form-control mx-2" placeholder="Author...." onChange={handlePengarang} />
+                                </div>
+                                <div className="col-3">
+                                    <input type="text" name="publikasi" className="form-control mx-2" placeholder="Publish...." onChange={handlePublikasi} />
+                                </div>
+                                <div className="col-2">
+                                    <button type="submit" className="btn btn-dark"><i className="fa-regular fa-square-check me-1"></i>Simpan</button><br/><br/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 )}
-                
+
                 {form === "edit" && (
-                    <FormUpdate update={updateData} />
+                    <div classname="card py-2 my-2 bg-secondary" id="formUbah">
+                        <div className="card-body">
+                            <h4>Ubah Data Buku</h4>
+                            <form className="row" onSubmit={submitChange}>
+                                <div className="col-4">
+                                    <input type="text" name="judul" className="form-control mx-2" placeholder="Title...." onChange={handleJudul} value={inputBook.judul} />
+                                </div>
+                                <div className="col-3">
+                                    <input type="text" name="pengarang" className="form-control mx-2" placeholder="Author...." onChange={handlePengarang} value={inputBook.pengarang} />
+                                </div>
+                                <div className="col-3">
+                                    <input type="text" name="publikasi" className="form-control mx-2" placeholder="Publish...." onChange={handlePublikasi} value={inputBook.publikasi} />
+                                </div>
+                                <div className="col-2">
+                                    <button type="submit" className="btn btn-dark"><i className="fa-regular fa-square-check me-1"></i>Ubah</button><br/><br/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 )}
 
                 <br></br>
                 
-                <Table bookList={books} remove={deleteData} />
+                <div id="daftarBuku">
+                    <table className="table table-sm">
+                        <thead className="table-success">
+                            <tr>
+                                <th scope="col" className="col-md-1">
+                                    <i className="fa-solid fa-arrow-up-1-9"></i>
+                                </th>
+                                <th scope="col" className="col-md-3">
+                                    <i className="fa-solid fa-book-open-reader me-1"></i>Title
+                                </th>
+                                <th scope="col" className="col-md-3">
+                                    <i className="fa-solid fa-user-pen me-1"></i>Author
+                                </th>
+                                <th scope="col" className="col-md-2">
+                                    <i className="bi bi-calendar-range-fill me-1"></i>Publish
+                                </th>
+                                <th scope="col" className="col-md-3">
+                                    <i className="fa-solid fa-wrench me-1"></i>Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {bookList.map((book, index) => (
+                            <tr key={index}>
+                                <th scope="row">{index + 1}</th>
+                                <td>{book.judul}</td>
+                                <td>{book.pengarang}</td>
+                                <td>{book.publikasi}</td>
+                                <td>
+                                    <button type="button" className="btn btn-primary btn-sm m-1" onClick={() => showEdit(book)}>
+                                        <i className="fa-solid fa-pen-to-square me-1"></i>Update
+                                    </button>
+                                    <button type="button" className="btn btn-danger btn-sm m-1" onClick={() => deleteBook(book)}>
+                                        <i className="fa-solid fa-trash-can me-1"></i>Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
