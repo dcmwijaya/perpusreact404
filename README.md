@@ -61,7 +61,7 @@
    npx nodemon server.js
    ````
 
-   <img src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js">
+   <img width="840" height="400" src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js">
 
 <br><br>
 
@@ -74,7 +74,7 @@
    npm start
    ````
 
-   <img src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">
+   <img width="840" height="340" src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">
 
 3. Please access the features and enjoy [Done].
 
