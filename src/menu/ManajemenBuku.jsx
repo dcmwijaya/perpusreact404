@@ -41,8 +41,8 @@ function ManajemenBuku({ bookList, store, update, remove, search }) {
         remove(book);
     }
 
-    function searchData(book){
-        search(book);
+    function submitSearch(inputBook){
+        search(inputBook);
     }
 
     return (
@@ -63,10 +63,12 @@ function ManajemenBuku({ bookList, store, update, remove, search }) {
                             <a href="/manajemenbuku" type="button" className="btn btn-secondary me-2">
                                 <i className="bi bi-arrow-clockwise"></i>
                             </a>
-                            <div className="input-group">
+                            <form className="input-group" onSubmit={submitSearch}>
                                 <input id="inSearchManbuk" type="text" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...."/>
-                                <button type="submit" className="btn btn-success" onClick={searchData}><i className="bi bi-search me-1"></i>Search</button>
-                            </div>
+                                <button type="submit" className="btn btn-success">
+                                    <i className="bi bi-search me-1"></i>Search
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -142,20 +144,20 @@ function ManajemenBuku({ bookList, store, update, remove, search }) {
                         </thead>
                         <tbody>
                             {bookList.map((book, index) => (
-                            <tr key={index}>
-                                <th scope="row">{index + 1}</th>
-                                <td>{book.judul}</td>
-                                <td>{book.pengarang}</td>
-                                <td>{book.publikasi}</td>
-                                <td>
-                                    <button type="button" className="btn btn-primary btn-sm m-1" onClick={() => showEdit(book)}>
-                                        <i className="fa-solid fa-pen-to-square me-1"></i>Update
-                                    </button>
-                                    <button type="button" className="btn btn-danger btn-sm m-1" onClick={() => deleteBook(book)}>
-                                        <i className="fa-solid fa-trash-can me-1"></i>Delete
-                                    </button>
-                                </td>
-                            </tr>
+                                <tr key={index}>
+                                    <th scope="row">{index + 1}</th>
+                                    <td>{book.judul}</td>
+                                    <td>{book.pengarang}</td>
+                                    <td>{book.publikasi}</td>
+                                    <td>
+                                        <button type="button" className="btn btn-primary btn-sm m-1" onClick={() => showEdit(book)}>
+                                            <i className="fa-solid fa-pen-to-square me-1"></i>Update
+                                        </button>
+                                        <button type="button" className="btn btn-danger btn-sm m-1" onClick={() => deleteBook(book)}>
+                                            <i className="fa-solid fa-trash-can me-1"></i>Delete
+                                        </button>
+                                    </td>
+                                </tr>
                             ))}
                         </tbody>
                     </table>
