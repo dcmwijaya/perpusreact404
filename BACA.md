@@ -100,8 +100,16 @@
 <tr>
 <td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/97f38958-b3f0-4f32-a608-047188050f8a" alt="create-data"></td>
 <td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/f353bc1c-7e3d-40a7-bcea-1594dfe635d2" alt="read-data"></td>
-<td><img src="" alt="update-data"></td>
-<td><img src="" alt="delete-data"></td>
+<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/fd9ffa50-88c6-4bdd-82d2-a11a1050708e" alt="update-data"></td>
+<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/bc718b9f-41d3-4aef-9ac9-b868d481b862" alt="delete-data"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840">Pencarian</th>
+</tr>
+<tr>
+<td><img src="" alt="search"></td>
 </tr>
 </table>
 
@@ -113,7 +121,7 @@ Aplikasi ini dibuat dengan menyertakan sumber-sumber dari pihak ketiga. Pihak ke
 <br><br>
 
 ## Pengingat
-Perbarui data, hapus data, & pencarian data belum bisa dilakukan, sehingga programmer membutuhkan waktu yang cukup lama untuk menyelesaikan masalah tersebut. Mohon bersabar :)
+Pencarian data belum bisa dilakukan, sehingga programmer membutuhkan waktu yang cukup lama untuk menyelesaikan masalah tersebut. Mohon bersabar :)
 
 <br><br>
 
