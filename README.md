@@ -61,6 +61,8 @@
    npx nodemon server.js
    ````
 
+   <img src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js">
+
 <br><br>
 
 ## Get Started
