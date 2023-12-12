@@ -99,7 +99,7 @@
 <tr>
 <td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/97f38958-b3f0-4f32-a608-047188050f8a" alt="create-data"></td>
 <td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/f353bc1c-7e3d-40a7-bcea-1594dfe635d2" alt="read-data"></td>
-<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/848a937b-f503-4438-b5f1-b93d4529bc8c" alt="update-data"></td>
+<td><img src="https://github.com/devancakra/perpusreact404/assets/54527592/fd9ffa50-88c6-4bdd-82d2-a11a1050708e" alt="update-data"></td>
 <td><img src="" alt="delete-data"></td>
 </tr>
 </table>
