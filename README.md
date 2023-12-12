@@ -120,7 +120,7 @@ This application has been created by including third-party sources. Third partie
 <br><br>
 
 ## Reminder
-Update data, delete data, & search data is not yet possible, so the programmer takes a long time to solve the problem. Please be patient :)
+Search data is not yet possible, so the programmer takes a long time to solve the problem. Please be patient :)
 
 <br><br>
 
