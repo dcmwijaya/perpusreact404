@@ -5,9 +5,7 @@ import Table from '../child/Table';
 import axios from "axios";
 
 function ManajemenBuku() {
-    //PART DATA
-    const [books, setBooks] = useState([]);
-    const [form, setForm] = useState();
+    const [books, setBooks, form, setForm] = useState([]);
 
     useEffect(() => {
         retrieveData();
@@ -27,8 +25,8 @@ function ManajemenBuku() {
     function storeData(inputBook) {
         axios
             .post("http://localhost:4000/book/add", inputBook)
-            .then(() => {
-                retrieveData();
+            .then((res) => {
+                setBooks((prevBooks) => [...prevBooks, inputBook]);
                 alert("Data berhasil ditambahkan!");
             })
             .catch((error) => { console.log(error.response.data) })
@@ -36,8 +34,8 @@ function ManajemenBuku() {
 
     function updateData(inputBook){
         axios
-        .put("http://localhost:4000/book/update/", inputBook._id, inputBook)
-        .then(() => {
+        .put("http://localhost:4000/book/update/" + inputBook._id, inputBook)
+        .then((res) => {
             retrieveData();
             alert("Data berhasil diperbarui!");
         })
@@ -46,7 +44,7 @@ function ManajemenBuku() {
     
     function deleteData(book) {
         axios
-            .delete("http://localhost:4000/book/delete/", book._id)
+            .delete("http://localhost:4000/book/delete/" + book._id)
             .then(() => {
                 retrieveData();
                 alert("Data berhasil dihapus!");
