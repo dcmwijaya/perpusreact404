@@ -15,8 +15,8 @@
 | Bagian |	Deskripsi |
 | --- | --- |
 | Fitur | Buat, Baca, Perbarui, Hapus, ETC |
-| Kerangka Kerja | React, Express, Mongoose, Cors, Morgan, Bootstrap 5 |
-| Peralatan | Visual Studio Code, MongoDB |
+| Kerangka Kerja | Express; React (Mongoose, Cors, Morgan); Bootstrap 5 |
+| Peralatan | Visual Studio Code, MongoDB, Node.Js |
 
 <br><br>
 
