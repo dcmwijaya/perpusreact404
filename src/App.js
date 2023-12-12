@@ -51,13 +51,23 @@ function App() {
           .catch((error) => { console.log(error.response.data) })
   }
 
+  function searchData(book) {
+    axios
+        .get("http://localhost:4000/book/search/" + book._id)
+        .then(() => {
+            retrieveData();
+            alert("Data berhasil ditemukan!");
+        })
+        .catch((error) => { console.log(error.response.data) })
+  }
+
   return (
     <div>
       <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" exact element={ <Beranda /> } />
-        <Route path="/manajemenbuku" exact element={ <ManajemenBuku bookList={books} store={storeData} update={updateData} remove={deleteData} /> } />
+        <Route path="/manajemenbuku" exact element={ <ManajemenBuku bookList={books} store={storeData} update={updateData} remove={deleteData} search={searchData} /> } />
       </Routes>
       <Footer />
       </BrowserRouter>

@@ -7,9 +7,9 @@ akses.route("/").get((req, res) => {
     .catch((error) => res.status(400).json(error.message));
 });
 
-akses.route("/delete/:id").delete((req, res) => {
-    BukuModel.findByIdAndDelete(req.params.id)
-    .then(() => res.status(200).json("Buku dihapus..."))
+akses.route("/add").post((req, res) => {
+    BukuModel.create(req.body)
+    .then((createdBook) => res.status(200).json(createdBook))
     .catch((error) => res.status(400).json(error.message));
 });
 
@@ -19,9 +19,15 @@ akses.route("/update/:id").put((req, res) => {
     .catch((error) => res.status(400).json(error.message));
 });
 
-akses.route("/add").post((req, res) => {
-    BukuModel.create(req.body)
-    .then((createdBook) => res.status(200).json(createdBook))
+akses.route("/delete/:id").delete((req, res) => {
+    BukuModel.findByIdAndDelete(req.params.id)
+    .then(() => res.status(200).json("Buku dihapus..."))
+    .catch((error) => res.status(400).json(error.message));
+});
+
+akses.route("/search/:id").get((req, res) => {
+    BukuModel.findById()
+    .then((books) => res.status(200).json(books))
     .catch((error) => res.status(400).json(error.message));
 });
 

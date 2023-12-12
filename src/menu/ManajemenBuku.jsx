@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ManajemenBuku({ bookList, store, update, remove }) {
+function ManajemenBuku({ bookList, store, update, remove, search }) {
     const [form, setForm] = useState();
     const [inputBook, setInputBook] = useState();
 
@@ -27,7 +27,8 @@ function ManajemenBuku({ bookList, store, update, remove }) {
 
     function submitAdd(event) {
         event.preventDefault();
-        store(inputBook);
+        store(inputBook);        
+        setForm("");
     }
 
     function submitChange(event) {
@@ -38,6 +39,10 @@ function ManajemenBuku({ bookList, store, update, remove }) {
 
     function deleteBook(book){
         remove(book);
+    }
+
+    function searchData(book){
+        search(book);
     }
 
     return (
@@ -60,7 +65,7 @@ function ManajemenBuku({ bookList, store, update, remove }) {
                             </a>
                             <div className="input-group">
                                 <input id="inSearchManbuk" type="text" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...."/>
-                                <button type="submit" className="btn btn-success"><i className="bi bi-search me-1"></i>Search</button>
+                                <button type="submit" className="btn btn-success" onClick={searchData}><i className="bi bi-search me-1"></i>Search</button>
                             </div>
                         </div>
                     </div>
