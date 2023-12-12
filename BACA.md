@@ -121,7 +121,7 @@ Aplikasi ini dibuat dengan menyertakan sumber-sumber dari pihak ketiga. Pihak ke
 <br><br>
 
 ## Pengingat
-Pencarian data belum bisa dilakukan, sehingga programmer membutuhkan waktu yang cukup lama untuk menyelesaikan masalah tersebut. Mohon bersabar :)
+Kekurangan: Masih ada bug di bagian pencarian data.
 
 <br><br>
 
