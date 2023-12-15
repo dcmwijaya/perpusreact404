@@ -8,6 +8,7 @@ import ManajemenBuku from './menu/ManajemenBuku';
 import Footer from "./layout/Footer";
 
 function App() {
+  const baseURL = "http://localhost:4000";
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -16,14 +17,14 @@ function App() {
 
   function retrieveData() {
     axios
-        .get("http://localhost:4000/book")
+        .get(`${baseURL}/book`)
         .then((response) => { setBooks(response.data) })
         .catch(function (error) { console.log(error.response.data) });
   }
   
   function storeData(inputBook) {
     axios
-        .post("http://localhost:4000/book/add", inputBook)
+        .post(`${baseURL}/book/add`, inputBook)
         .then((res) => {
             setBooks((prevBooks) => [...prevBooks, inputBook]);
             alert("Data berhasil ditambahkan!");
@@ -33,7 +34,7 @@ function App() {
 
   function updateData(inputBook){
     axios
-        .put("http://localhost:4000/book/update/" + inputBook._id, inputBook)
+        .put(`${baseURL}/book/update/` + inputBook._id, inputBook)
         .then((res) => {
             retrieveData();
             alert("Data berhasil diperbarui!");
@@ -43,20 +44,10 @@ function App() {
   
   function deleteData(book) {
     axios
-        .delete("http://localhost:4000/book/delete/" + book._id)
+        .delete(`${baseURL}/book/delete/` + book._id)
         .then(() => {
             retrieveData();
             alert("Data berhasil dihapus!");
-        })
-        .catch((error) => { console.log(error.response.data) })
-  }
-
-  function searchData(inputBook) {
-    axios
-        .get("http://localhost:4000/book/search/" + inputBook._id, inputBook)
-        .then(() => {
-            retrieveData();
-            alert("Data berhasil ditemukan!");
         })
         .catch((error) => { console.log(error.response.data) })
   }
@@ -67,7 +58,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={ <Beranda /> } />
-        <Route path="/manajemenbuku" exact element={ <ManajemenBuku bookList={books} store={storeData} update={updateData} remove={deleteData} search={searchData} /> } />
+        <Route path="/manajemenbuku" exact element={ <ManajemenBuku bookList={books} store={storeData} update={updateData} remove={deleteData} /> } />
       </Routes>
       <Footer />
       </BrowserRouter>

@@ -25,10 +25,4 @@ akses.route("/delete/:id").delete((req, res) => {
     .catch((error) => res.status(400).json(error.message));
 });
 
-akses.route("/search/:id").get((req, res) => {
-    BukuModel.findById()
-    .then((books) => res.status(200).json(books))
-    .catch((error) => res.status(400).json(error.message));
-});
-
 module.exports = akses;

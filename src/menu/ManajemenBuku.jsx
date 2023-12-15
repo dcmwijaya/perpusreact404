@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
-function ManajemenBuku({ bookList, store, update, remove, search }) {
-    const [form, setForm] = useState();
-    const [inputBook, setInputBook] = useState();
+function ManajemenBuku({ bookList, store, update, remove }) {
+    const [form, setForm] = useState([]);
+    const [inputBook, setInputBook] = useState([]);
 
     function showCreate(){
         setForm("create");
@@ -41,9 +42,23 @@ function ManajemenBuku({ bookList, store, update, remove, search }) {
         remove(book);
     }
 
-    function submitSearch(inputBook){
-        search(inputBook);
-    }
+    // =================================================================================== //
+    // UJI COBA SEARCH                                                                     //
+    // =================================================================================== //
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSearch = async () => {
+        try {
+        const response = await axios.get(
+            `http://localhost:4000/posts?q=${searchQuery}`
+        );
+        setSearchResults(response.data);
+        } catch (error) {
+        console.error('Error fetching data:', error);
+        }
+    };
 
     return (
         <div className="container mt-5 mb-5 w-75">
@@ -63,9 +78,9 @@ function ManajemenBuku({ bookList, store, update, remove, search }) {
                             <a href="/manajemenbuku" type="button" className="btn btn-secondary me-2">
                                 <i className="bi bi-arrow-clockwise"></i>
                             </a>
-                            <form className="input-group" onSubmit={submitSearch}>
-                                <input id="inSearchManbuk" type="text" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...."/>
-                                <button type="submit" className="btn btn-success">
+                            <form className="input-group">
+                                <input id="inSearchManbuk" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="text" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...." />
+                                <button type="submit" className="btn btn-success" onClick={handleSearch}>
                                     <i className="bi bi-search me-1"></i>Search
                                 </button>
                             </form>
