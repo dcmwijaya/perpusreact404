@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import axios from "axios";
 
-function ManajemenBuku({ bookList, store, update, remove }) {
+function ManajemenBuku({ bookList, store, update, remove, search }) {
     const [form, setForm] = useState([]);
     const [inputBook, setInputBook] = useState([]);
+    const [searchBook, setSearchBook] = useState([]);
 
     function showCreate(){
         setForm("create");
@@ -42,23 +42,13 @@ function ManajemenBuku({ bookList, store, update, remove }) {
         remove(book);
     }
 
-    // =================================================================================== //
-    // UJI COBA SEARCH                                                                     //
-    // =================================================================================== //
-
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
-
-    const handleSearch = async () => {
-        try {
-        const response = await axios.get(
-            `http://localhost:4000/posts?q=${searchQuery}`
-        );
-        setSearchResults(response.data);
-        } catch (error) {
-        console.error('Error fetching data:', error);
-        }
+    function handleSearch(event) {
+        setSearchBook({ ...searchBook, judul: event.target.value })
     };
+
+    function submitSearch() {
+        search(searchBook);
+    }
 
     return (
         <div className="container mt-5 mb-5 w-75">
@@ -78,9 +68,9 @@ function ManajemenBuku({ bookList, store, update, remove }) {
                             <a href="/manajemenbuku" type="button" className="btn btn-secondary me-2">
                                 <i className="bi bi-arrow-clockwise"></i>
                             </a>
-                            <form className="input-group">
-                                <input id="inSearchManbuk" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="text" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...." />
-                                <button type="submit" className="btn btn-success" onClick={handleSearch}>
+                            <form className="input-group" onSubmit={submitSearch}>
+                                <input id="inSearchManbuk" onChange={handleSearch} value={searchBook.judul} type="search" className="form-control formin-group" aria-label="Search" placeholder="Find the book title...." />
+                                <button type="submit" className="btn btn-success">
                                     <i className="bi bi-search me-1"></i>Search
                                 </button>
                             </form>
@@ -159,7 +149,7 @@ function ManajemenBuku({ bookList, store, update, remove }) {
                         </thead>
                         <tbody>
                             {bookList.map((book, index) => (
-                                <tr key={index}>
+                                <tr key={book}>
                                     <th scope="row">{index + 1}</th>
                                     <td>{book.judul}</td>
                                     <td>{book.pengarang}</td>

@@ -25,7 +25,7 @@ function App() {
   function storeData(inputBook) {
     axios
         .post(`${baseURL}/book/add`, inputBook)
-        .then((res) => {
+        .then(() => {
             setBooks((prevBooks) => [...prevBooks, inputBook]);
             alert("Data berhasil ditambahkan!");
         })
@@ -35,7 +35,7 @@ function App() {
   function updateData(inputBook){
     axios
         .put(`${baseURL}/book/update/` + inputBook._id, inputBook)
-        .then((res) => {
+        .then(() => {
             retrieveData();
             alert("Data berhasil diperbarui!");
         })
@@ -52,13 +52,23 @@ function App() {
         .catch((error) => { console.log(error.response.data) })
   }
 
+  function searchData(searchBook) {
+    axios
+        .post(`${baseURL}/book/search/` + searchBook._id, searchBook)
+        .then(() => {
+            retrieveData();
+            alert("Data berhasil ditemukan!");
+        })
+        .catch((error) => { console.log(error.response.data) })
+  }
+
   return (
     <div>
       <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" exact element={ <Beranda /> } />
-        <Route path="/manajemenbuku" exact element={ <ManajemenBuku bookList={books} store={storeData} update={updateData} remove={deleteData} /> } />
+        <Route path="/manajemenbuku" exact element={ <ManajemenBuku bookList={books} store={storeData} update={updateData} remove={deleteData} search={searchData} /> } />
       </Routes>
       <Footer />
       </BrowserRouter>
