@@ -1,3 +1,6 @@
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?style=flat)](https://github.com/ellerbrock/open-source-badges/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?logo=github&color=%23F7DF1E)](https://opensource.org/licenses/MIT)
+![GitHub last commit](https://img.shields.io/github/last-commit/devancakra/perpusreact404)
 ![ReactJS](https://img.shields.io/badge/-React%20JS-darkcyan?style=flat&logo=react)
 ![HTML5](https://img.shields.io/badge/-HTML%205-purple.svg?&logo=html5)
 ![CSS3](https://img.shields.io/badge/-CSS%203-green.svg?&logo=css3)
@@ -125,7 +128,7 @@ Disadvantages: There are still bugs in the data search section.
 <br><br>
 
 ## LICENSE
-MIT License - Copyright (c) 2022 - Devan C. M. Wijaya, S.Kom
+MIT License - Copyright © 2022 - Devan C. M. Wijaya, S.Kom
 
 Permission is hereby granted without charge to any person obtaining a copy of this software and the software-related documentation files to deal in them without restriction, including without limitation the right to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons receiving the Software to be furnished therewith on the following terms:
 
