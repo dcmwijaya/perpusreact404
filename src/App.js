@@ -18,8 +18,8 @@ function App() {
   function retrieveData() {
     axios
         .get(`${baseURL}/book`)
-        .then((response) => { setBooks(response.data) })
-        .catch(function (error) { console.log(error.response.data) });
+        .then((response) => { setBooks(response.data); })
+        .catch(function (error) { console.log(error.response.data); });
   }
   
   function storeData(inputBook) {
@@ -29,7 +29,7 @@ function App() {
             setBooks((prevBooks) => [...prevBooks, inputBook]);
             alert("Data berhasil ditambahkan!");
         })
-        .catch((error) => { console.log(error.response.data) })
+        .catch((error) => { console.log(error.response.data); })
   }
 
   function updateData(inputBook){
@@ -39,7 +39,7 @@ function App() {
             retrieveData();
             alert("Data berhasil diperbarui!");
         })
-        .catch((error) => { console.log(error.response.data) })
+        .catch((error) => { console.log(error.response.data); })
   }
   
   function deleteData(book) {
@@ -49,17 +49,17 @@ function App() {
             retrieveData();
             alert("Data berhasil dihapus!");
         })
-        .catch((error) => { console.log(error.response.data) })
+        .catch((error) => { console.log(error.response.data); })
   }
 
   function searchData(searchBook) {
     axios
-        .post(`${baseURL}/book/search/` + searchBook._id, searchBook)
-        .then(() => {
-            retrieveData();
+        .post(`${baseURL}/book/search/` + searchBook.judul, searchBook)
+        .then((response) => { 
+            setBooks(response.data);
             alert("Data berhasil ditemukan!");
         })
-        .catch((error) => { console.log(error.response.data) })
+        .catch((error) => { console.log(error.response.data); })
   }
 
   return (
