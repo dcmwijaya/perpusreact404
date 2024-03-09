@@ -98,7 +98,7 @@
 <br><br>
 
 ## Memulai
-1. Unduh dan ekstrak repositori ini.
+1. Unduh dan ekstrak repositori ini.<br><br>
    
 2. Buka direktori ``` perpusreact404 ```, lalu buka ``` CMD ``` di dalam direktori tersebut. Untuk memulai ``` server web ```, anda harus mengetikkan perintah berikut:
 
