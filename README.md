@@ -24,24 +24,43 @@
 <br><br>
 
 ## Download & Install
-1. Visual Studio Code :
+1. Visual Studio Code
+
+   <table><tr><td width="810">
    
    ```
    https://code.visualstudio.com/docs/?dv=win
    ```
-2. NodeJS :
+
+   </td></tr></table><br>
+   
+2. NodeJS
+
+   <table><tr><td width="810">
    
    ```
    https://nodejs.org/en/download
    ```
-   
-3. MongoDB :
 
+   </td></tr></table><br>
+   
+3. MongoDB
+
+   <table><tr><td width="810">
+      
    ```
    https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.3-signed.msi
    ```
+
+   </td></tr></table><br>
    
-4. Visual Studio Code Extensions : ``` Prettier ```
+4. Visual Studio Code Extensions
+
+   <table><tr><td width="810">
+
+   ``` Prettier ```   
+
+   </td></tr></table>
 
 <br><br>
 
