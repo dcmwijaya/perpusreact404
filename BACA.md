@@ -24,61 +24,93 @@
 <br><br>
 
 ## Unduh & Instal
-1. Visual Studio Code :
+1. Visual Studio Code
+
+   <table><tr><td width="810">
    
    ```
    https://code.visualstudio.com/docs/?dv=win
    ```
+
+   </td></tr></table><br>
    
-2. NodeJS :
+2. NodeJS
+
+   <table><tr><td width="810">
    
    ```
    https://nodejs.org/en/download
    ```
-   
-3. MongoDB :
 
+   </td></tr></table><br>
+   
+3. MongoDB
+
+   <table><tr><td width="810">
+      
    ```
    https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.3-signed.msi
    ```
+
+   </td></tr></table><br>
    
-4. Visual Studio Code Extensions : ``` Prettier ```
+4. Visual Studio Code Extensions
+
+   <table><tr><td width="810">
+
+   ``` Prettier ```   
+
+   </td></tr></table>
 
 <br><br>
 
 ## Basis Data
 1. Buatlah ``` koneksi ``` di ``` MongoDB ``` seperti yang ditunjukkan pada gambar berikut:
    
-   <img width="400" height="360" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
+   <table><tr><td width="810">   
+      <img src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection">
+   </td></tr></table><br>
 
 2. Buatlah ``` database ``` dan ``` koleksi ``` seperti yang ditunjukkan pada gambar di bawah ini:
    
-   <img width="840" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
+   <table><tr><td width="810">
+      <img src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection">
+   </td></tr></table><br>
 
-3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Cari berkas yang bernama ``` db_perpusreact404.katalogbuku.json ```, berkas ini terletak di direktori ``` perpusreact404/public/DB ```.
+3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Cari berkas yang bernama ``` db_perpusreact404.katalogbuku.json ```, berkas ini terletak di direktori ``` perpusreact404/public/DB ```.<br>
 
-   <img width="840" src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db"><br>
+   <table><tr><td width="810">
+      <img src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db">
+   </td></tr></table><br>
 
 4. Buka direktori ``` backend ``` -> Buka ``` CMD ``` di dalam direktori tersebut -> Ketik seperti di bawah ini:
+
+   <table><tr><td width="810">
 
    ````bash
    npx nodemon server.js
    ````
 
-   <img width="840" height="400" src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js">
+   <img src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js"> 
+
+   </td></tr></table>
 
 <br><br>
 
 ## Memulai
 1. Unduh dan ekstrak repositori ini.
    
-2. Buka direktori ``` perpusreact404 ```, lalu buka ``` CMD ``` di dalam direktori tersebut. Untuk memulai ``` server web ```, anda harus mengetikkan perintah berikut:<br>
+2. Buka direktori ``` perpusreact404 ```, lalu buka ``` CMD ``` di dalam direktori tersebut. Untuk memulai ``` server web ```, anda harus mengetikkan perintah berikut:
+
+   <table><tr><td width="810">
 
    ````bash
    npm start
    ````
 
-   <img width="840" height="340" src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">
+   <img width="840" height="340" src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">   
+
+   </td></tr></table><br>
 
 3. Silakan akses fitur-fitur tersebut dan nikmatilah [Selesai].
 
@@ -118,13 +150,18 @@
 
 <br><br>
 
-## Penafian
-Aplikasi ini dibuat dengan menyertakan sumber-sumber dari pihak ketiga. Pihak ketiga di sini adalah penyedia layanan, yang layanannya berupa pustaka, kerangka kerja, dan lain-lain. Saya ucapkan terima kasih banyak atas layanannya. Telah terbukti sangat membantu dan dapat diimplementasikan.
+## Pengingat
+Kekurangan: Masih ada bug di bagian pencarian data.
 
 <br><br>
 
-## Pengingat
-Kekurangan: Masih ada bug di bagian pencarian data.
+## Apresiasi
+Jika anda merasa karya ini bermanfaat, dukunglah karya ini sebagai bentuk apresiasi kepada penulis dengan cara mengeklik tombol ``` ⭐Bintang ```.
+
+<br><br>
+
+## Penafian
+Aplikasi ini dibuat dengan menyertakan sumber-sumber dari pihak ketiga. Pihak ketiga di sini adalah penyedia layanan, yang layanannya berupa pustaka, kerangka kerja, dan lain-lain. Saya ucapkan terima kasih banyak atas layanannya. Telah terbukti sangat membantu dan dapat diimplementasikan.
 
 <br><br>
 
