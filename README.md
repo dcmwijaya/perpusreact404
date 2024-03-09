@@ -67,36 +67,50 @@
 ## Database
 1. Create a ``` connection ``` in ``` MongoDB ``` as shown in the following image:
    
-   <img width="400" height="360" src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection"><br>
+   <table><tr><td width="810">   
+      <img src="https://github.com/devancakra/perpusreact404/assets/54527592/c011087c-8d83-4007-a47b-dbdff34e5ab8" alt="create-connection">
+   </td></tr></table><br>
 
 2. Create a ``` database ``` and ``` collection ``` as shown in the image below:
    
-   <img width="840" src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection"><br>
+   <table><tr><td width="810">
+      <img src="https://github.com/devancakra/perpusreact404/assets/54527592/9f5aa1dd-ca86-4251-9c40-e6e7280d25c0" alt="create-db-collection">
+   </td></tr></table><br>
 
-3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Look for the file called ``` db_perpusreact404.katalogbuku.json ```, it is located in the ``` perpusreact404/public/DB ``` directory.
+3. ``` Add Data ``` -> ``` Import JSON or CSV File ``` -> Look for the file called ``` db_perpusreact404.katalogbuku.json ```, it is located in the ``` perpusreact404/public/DB ``` directory.<br>
 
-   <img width="840" src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db"><br>
+   <table><tr><td width="810">
+      <img src="https://github.com/devancakra/perpusreact404/assets/54527592/9aec4fca-f1da-439f-9beb-f7acf08b414f" alt="import-json-db">
+   </td></tr></table><br>
 
 4. Open the ``` backend ``` directory -> Open ``` CMD ``` inside the directory -> Type as below:
+
+   <table><tr><td width="810">
 
    ````bash
    npx nodemon server.js
    ````
 
-   <img width="840" height="400" src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js">
+   <img src="https://github.com/devancakra/perpusreact404/assets/54527592/5580784f-bcb2-4d75-9dae-6bf950dec2dc" alt="npx_nodemon_server_js"> 
+
+   </td></tr></table>
 
 <br><br>
 
 ## Get Started
-1. Download and extract this repository.
+1. Download and extract this repository.<br><br>
    
-2. Open the ``` perpusreact404 ``` directory, then open ``` CMD ``` inside the directory. To start the ``` web server ```, you are required to type the following command:<br>
+2. Open the ``` perpusreact404 ``` directory, then open ``` CMD ``` inside the directory. To start the ``` web server ```, you are required to type the following command:
+
+   <table><tr><td width="810">
 
    ````bash
    npm start
    ````
 
-   <img width="840" height="340" src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">
+   <img width="840" height="340" src="https://github.com/devancakra/perpusreact404/assets/54527592/71f62129-6b33-4983-bc52-1d582cd7221b" alt="npm-start">   
+
+   </td></tr></table><br>
 
 3. Please access the features and enjoy [Done].
 
