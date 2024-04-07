@@ -29,7 +29,7 @@
    <table><tr><td width="810">
    
    ```
-   https://code.visualstudio.com/docs/?dv=win
+   https://bit.ly/VScode_Installer
    ```
 
    </td></tr></table><br>
@@ -39,7 +39,7 @@
    <table><tr><td width="810">
    
    ```
-   https://nodejs.org/en/download
+   https://bit.ly/NodeJS_Installer
    ```
 
    </td></tr></table><br>
@@ -49,7 +49,7 @@
    <table><tr><td width="810">
       
    ```
-   https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.3-signed.msi
+   https://bit.ly/MongoDB_Installer
    ```
 
    </td></tr></table><br>
