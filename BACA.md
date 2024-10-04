@@ -128,10 +128,10 @@
 <th width="210">Hapus</th>
 </tr>
 <tr>
-<td><img src="documentation/Create Data.jpg" alt="create-data"></td>
-<td><img src="documentation/Read Data.jpg" alt="read-data"></td>
-<td><img src="documentation/Update Data.jpg" alt="update-data"></td>
-<td><img src="documentation/Delete Data.jpg" alt="delete-data"></td>
+<td><img src="documentation/Create.jpg" alt="create-data"></td>
+<td><img src="documentation/Read.jpg" alt="read-data"></td>
+<td><img src="documentation/Update.jpg" alt="update-data"></td>
+<td><img src="documentation/Delete.jpg" alt="delete-data"></td>
 </tr>
 </table>
 <table>
